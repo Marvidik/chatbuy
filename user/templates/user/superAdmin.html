@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin - chatbuy</title>
+    <link rel="stylesheet" href="{% static 'user/superAdmin.css'%}">
+    <script src="{% static 'user/jquery-3.6.3.js'%}"></script>
+    <script>
+        $(document).ready(function(){
+           
+    $('.vendorTableCont table tr td:nth-child(3)').click(function(){
+        $('.overlayCont').css('display', 'flex')
+        console.log('hi')
+    })
+    $('.overlay button').click(function(){
+        $('.overlayCont').css('display', 'none')
+    })
+
+    $('.uploadReqTableCont table tr td:nth-child(3)').click(function(){
+        $('.uploadOverlayCont').css('display', 'flex')
+    })
+    $('.uploadOverlay button').click(function(){
+        $('.uploadOverlayCont').css('display', 'none')
+    })
+        })
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'user/img/logo.png'%}" alt="">
+    </div>
+    <div class="intro">
+        <h4>Dashboard</h4>
+        <h2>Welcome, Super Admin</h2>
+        <img src="{% static 'user/img/dashboard2.jpg'%}" alt="">
+    </div>
+    <div class="smallBoxCont">
+        <div class="smallBox">
+            <img src="{% static 'user/img/cargo.png'%}" alt="">
+            <h3>Total orders</h3>
+            <h2>{{total}}</h2>
+        </div>
+        <div class="smallBox">
+            <img src="{% static 'user/img/rating.png'%}" alt="">
+            <h3>Total Cutomers</h3>
+            <h2>{{customer_users_count}}</h2>
+        </div>
+        <div class="smallBox">
+            <img src="{% static 'user/img/vendor.png'%}" alt="">
+            <h3>Total Vendors</h3>
+            <h2>{{vendor_users_count}}</h2>
+        </div>
+        <div class="smallBox">
+            <img src="{% static 'user/img/box.png'%}" alt="">
+            <h3>Total Products</h3>
+            <h2>{{ptotal}}</h2>
+        </div>
+    </div>
+
+    <div class="tableCont">
+        <h2>Order History</h2>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Vendor</th>
+                <th>Date & Time</th>
+                
+            </tr>
+            
+            {% for orders in order%}
+            <tr>
+                <td>{{orders.id}}</td>
+                <td>{{orders.user}}</td>
+                <td>{{orders.store}}</td>
+                <td>{{orders.ordered_date}}</td>
+               
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="vendorTableCont" id="phoneVendor">
+        <h2>Vendor Resigration Request</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>LGA</th>
+                <th>More</th>
+                <th colspan="2">Action</th>
+            </tr>
+            <tr>
+                <td>Kelly's Stores</td>
+                <td>Oshodi</td>
+                <td>See details</td>
+                <td colspan="2"><button>Approve</button>
+                    <button>Decline</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Kelly's Stores</td>
+                <td>Oshodi</td>
+                <td>See details</td>
+                <td colspan="2"><button>Approve</button>
+                    <button>Decline</button>
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+
+    <div class="vendorTableCont" id="desktopVendor" style="margin-top: 3rem;">
+        <h2>Vendors</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>LGA</th>
+                <th>State</th>
+                <th>Phone</th>
+                
+                <th colspan="2">Address</th>
+                <th>Nearest landmark</th>
+                {% comment %} <th colspan="2">Action</th> {% endcomment %}
+            </tr>
+            {% for vendor in vendors %}
+            <tr>
+                <td>{{vendor.bussiness_name}}</td>
+                <td>{{vendor.lga}}</td>
+                <td>{{vendor.state}}</td>
+                <td>{{vendor.phone}}</td>
+                
+                <td colspan="2">{{vendor.bussiness_address}}</td>
+                  </td>
+                <td>{{vendor.nearest_landmark}}</td>
+                {% comment %} <td colspan="2"><button>Approve</button>
+                    <button>Decline</button>
+                </td> {% endcomment %}
+            </tr>
+            {% endfor %}
+     
+            
+        </table>
+    </div>
+
+    <div class="uploadReqTableCont" id="phoneUpload">
+        <h2>Product Upload Request</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>LGA</th>
+                <th>More</th>
+                <th colspan="2">Action</th>
+            </tr>
+          
+            <tr>
+                <td>Kelly's Stores</td>
+                <td>Oshodi</td>
+                <td>See details</td>
+                <td colspan="2"><button>Approve</button>
+                    <button>Decline</button>
+                </td>
+            </tr>
+           
+            <tr>
+                <td>Kelly's Stores</td>
+                <td>Oshodi</td>
+                <td>See details</td>
+                <td colspan="2"><button>Approve</button>
+                    <button>Decline</button>
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+
+    
+
+    <div class="tableCont" style=" margin-bottom: 3rem">
+        <h2>All Products In Database</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>stock</th>
+            </tr>
+            {% for aprod in aproducts %}
+            <tr>
+                <td>{{aprod.name}}</td>
+                <td>{{aprod.category}}</td>
+                <td><sup>&#8358</sup>{{aprod.price}}</td>
+                <td>{{aprod.price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="uploadReqTableCont" id="desktopUpload" style="margin-bottom: 3rem;" >
+        <h2>Product Upload Request</h2>
+        <table>
+            <tr>
+                <th>Picture</th>
+                <th>Vendor</th>
+                <th>Product Name</th>
+                <th colspan="1" width="40%">Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th colspan="2">Action</th>
+
+            </tr>
+            {% for prod in products %}
+            <tr>
+                <td><img src="{{prod.image.url}}" alt=""></td>
+                <td>{{prod.store_name}}</td>
+                <td>{{prod.name}}</td>
+                <td colspan="1" width="30%" >
+                    {{prod.description}}
+                </td>
+                <td>&#8358 {{prod.price}}</td>
+                <td>watches</td>
+                <td colspan="2"><a href="{% url 'status' prod.pk %}"><button>Approve</button></a>
+                    <a  href="{% url 'remove' prod.pk %}"><button>Decline</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+  
+            
+        </table>
+    </div>
+
+    <div class="overlayCont">
+        <div class="overlay">
+            <button>x</button>
+            <h2>New Vendor</h2>
+            <h5>Business name:</h5>
+            <p>Jamies specials</p>
+
+            <h5>Address:</h5>
+            <p>13, light street, agbado estate, lagos state</p>
+
+            <h5>Phone:</h5>
+            <p>09071639264</p>
+
+            <h5>Nearest landmark:</h5>
+            <p>Mobile filling station</p>
+            
+            <h5>LGA:</h5>
+            <p>Ikorodu</p>
+
+            <h5>State:</h5>
+            <p>Lagos</p>
+
+            <h5>Email:</h5>
+            <p>Jamiesspecials@outlook.com</p>
+        </div>
+    </div>
+
+    <div class="uploadOverlayCont" >
+        <div class="uploadOverlay">
+            <button>x</button>
+            <h2>New Product</h2>
+            <div class="details">
+                
+            <h5>Vendor name:</h5>
+            <p>Sarah's specials</p>
+
+            <h5>Product Name:</h5>
+            <p>Addidas Sneakers</p>
+            
+            <h5>Category:</h5>
+            <p>Shoes</p>
+
+            <h5>Price:</h5>
+            <p>&#8358 5000</p>
+            
+            <h5>Description:</h5>
+            <p>Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. Earum nihil ipsa quas sint tempora reprehenderit quod! Iusto facilis quaerat et non cupiditate, accusantium est, 
+            minus quisquam sed iste eligendi nesciunt.
+            </p>
+
+            <h5>Photo:</h5>
+            <img src="" alt="">
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

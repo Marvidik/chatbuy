@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{% static 'user/customerAdmin.css'%}">
+    <script src="jquery-3.6.3.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sideHeader P').click(function(){
+            $('.sideMenu').toggleClass('show')
+        })
+
+        $('.intro').click(function(){
+            $('.sideMenu').toggleClass('show') ;
+        })
+
+        $('.sideMenu ul li').click(function(){
+            $('.sideMenu').toggleClass('show') ; console.log('hi')
+        })
+        })
+    </script>
+</head>
+<body>
+    <div class="sideMenu">
+        <div class="sideHeader">
+            <img src="" alt="">
+            <p>x</p>
+        </div>
+        <img src="" alt="">
+        <h2>{{user.username}}</h2>
+        <p>Customer</p>
+        <ul>
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="#transaction">Transactions</a></li>
+            <li><a href="{% url 'notification'%}">Notification</a></li>
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+        </ul>
+    </div>
+    <div class="intro" id="intro">
+        <div class="topCont">
+            <div class="navBtn">
+                <div class="btn1"></div>
+                <div class="btn2"></div>
+                <div class="btn3"></div>
+            </div>
+
+            <div class="dp">
+                <img src="" alt="" class="dp">
+                <div class="online"></div>
+            </div>
+        </div>
+
+        <h2>Welcome! {{user.username}}</h2>
+        <h4>Dashboard</h4>
+        {% comment %} <h3>$5,000</h3> {% endcomment %}
+    </div>
+
+   
+
+    <div class="transactionsCont" id="transaction">
+       <h3>Recent transactions:</h3>
+       <table>
+            <tr>
+                <th>Date</th>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+            {% for order in order_items%}
+            <tr>
+                <td>{{order.ordered_date}}</td>
+                <td>{{order.id}}</td>
+                <td>Cashback</td>
+                <td>{{order.total_cost}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'user/styleE.css'%}">
+    <style>
+        body{
+            background: rgba(178, 178, 184, 0.4);
+        }
+    </style>
+    <script src="{% static 'user/jquery-3.6.3.js'%}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.asCustomer').click(function(){
+                $(".signUpCont").css('margin-top', '1rem')
+                $('#vendorSignUp').css('display', 'none')
+                $('#customerSignUp').css('display', 'block')
+             })
+             
+             $('.asVendor').click(function(){
+                $(".signUpCont").css('margin-top', '1rem')
+                $('#customerSignUp').css('display', 'none')
+                $('#vendorSignUp').css('display', 'block')
+            })
+            
+            $('#customerSignUp input').focus(function(){
+                $(this).prev().prev().toggleClass('labelFocus')
+                $(this).css('border', '1px solid rgb(235, 85, 85)')
+                $(this).css('background', 'white')
+            })
+
+            $('#customerSignUp input').blur(function(){
+                $(this).prev().prev().toggleClass('labelFocus')
+                $(this).css('border', 'none')
+                $(this).css('background', '#ddd')
+            })
+
+            $('#vendorSignUp input').focus(function(){
+                $(this).prev().prev().toggleClass('labelFocus')
+                $(this).css('border', '1px solid rgb(235, 85, 85)')
+                $(this).css('background', 'white')
+            })
+
+            $('#vendorSignUp input').blur(function(){
+                $(this).prev().prev().toggleClass('labelFocus')
+                $(this).css('border', 'none')
+                $(this).css('background', '#ddd')
+            })
+
+            $('#vendorSignUp select').focus(function(){
+                $(this).prev().prev().toggleClass('labelFocus')
+                $(this).css('border', '1px solid rgb(235, 85, 85)')
+                $(this).css('background', 'white')
+            })
+
+            $('#vendorSignUp select').blur(function(){
+                $(this).prev().prev().toggleClass('labelFocus')
+                $(this).css('border', 'none')
+                $(this).css('background', '#ddd')
+            })
+        })
+    </script>
+    <title>Sign up - Greezon</title>
+</head>
+<body>
+    <div class="signUpCont">
+        
+        <img src="{% static 'user/img/imgg.jpg'%}" alt="freepick.com image">
+        <h1>Sign Up</h1>
+        <p class="as">As</p>
+        <div class="line"></div>
+        <div class="signUpType">
+            <button class="asCustomer">Customer</button>
+            <p style="color: rgba(0,0,0,0.5);">Or</p>
+            <button class="asVendor">Vendor</button>
+        </div>
+
+         <!-- FORM FOR CUSTOMERS -->
+        <form action="{% url 'vreg'%}" method="post" id="customerSignUp" name="normal_user">
+            {% csrf_token %}
+            <label for="firstname">First Name</label>
+            <br>
+            {{uform.first_name}}
+            <br>
+
+            <label for="surname">Surname</label>
+            <br>
+            {{uform.last_name}}
+            <br>
+
+            <label for="username">Username</label>
+            <br>
+            {{uform.username}}
+            <br>
+
+            <label for="email">Email</label>
+            <br>
+            {{uform.email}}
+            <br>
+
+            <label for="password">Password</label>
+            <br>
+            {{uform.password}}
+            <br>
+
+            
+            <button type="submit" id="submit" name="userf">Submit</button>
+        </form>
+
+       <!-- FORM FOR CUSTOMERS ENDS -->
+       
+        <!-- FORM FOR VENDORS -->
+
+        <form action="{% url 'vreg'%}" method="post" id="vendorSignUp" name="vendor">
+            {% csrf_token %}
+            <label for="businessName">Business Name</label>
+            <br>
+            {{vform.bussiness_name}}
+            <br>
+
+            <label for="businessAddress">Business Address</label>
+            <br>
+            {{vform.bussiness_address}}
+            <br>
+
+            <label for="phone">Official Phone Number</label>
+            <br>
+            {{vform.phone_number}}
+            <br>
+
+            <label for="cac">Coperate Affairs Commision Registration Number</label>
+            <br>
+            {{vform.Cac}}
+            <br>
+
+            <label for="landmark">Nearest Landmark</label>
+            <br>
+            {{vform.nearest_landmark}}
+            <br>
+            <label for="lga">Local Government Area</label>
+            <br>
+            {{vform.lga}}
+            <br>
+
+            <label for="state">State</label>
+            <br>
+            {{vform.state}}
+        <br>
+            
+            <label for="name">Username</label>
+           
+        <br>
+        <input type="name" name="username" id="username" required>
+        <br>
+            
+            <label for="email">Business Email</label>
+            <br>
+            <input type="email" name="email" id="email" required>
+            <br>
+
+            <label for="password">Password</label>
+            <br>
+            <input type="password" name="password" required>
+            <br>
+
+            
+            <button type="submit" id="submit" name="vendorf">Submit</button>
+        </form>
+
+        <!-- FORM FOR VENDORS ENDS -->
+
+    </div>
+</body>
+</html>

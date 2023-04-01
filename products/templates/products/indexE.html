@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Greezon &#i53</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'products/styleE.css'%}">
+    <script src="https://kit.fontawesome.com/37ab93e118.js" crossorigin="anonymous"></script>
+    <script src="{% static 'products/jquery-3.6.3.js'%}"></script>
+    <script>
+         $(document).ready(function(){
+            $('.viewAll').mouseenter(function(){
+                $('.viewAll').animate({bottom:'8px'})
+            })
+
+            $('.viewAll').mouseleave(function(){
+                $('.viewAll').animate({bottom:'0px'})
+            })
+            $('.menuItems:nth-child(3)').css({
+                transform: 'translateY(-18px)',
+                width: '4rem',
+                height: '4rem',
+                border: '1px solid black'
+            })
+
+            $('.menuItems').hover(function(){
+                $(this).toggleClass('menuHover')
+            })
+
+            $('.close').click(function(){
+                $('.sideMenu').toggleClass('show')
+            })
+
+            $('.navBtn').click(function(){
+                $('.sideMenu').toggleClass('show')
+            })
+
+            $('.categoriesSub').slideUp()
+
+           $('.mainList li').mouseenter(function(){
+               $(this).css('color', 'red')
+               $(this).css('transform', 'translatex(4px)')
+           })
+           $('.mainList li').mouseleave(function(){
+               $(this).css('color', 'black')
+               $(this).css('transform', 'translatex(0px)')
+               $(this).css('transition', ' .6s ease-out')
+           })
+
+            $('.menuCategories').click(function(e){
+                $('.categoriesSub').slideToggle('1000')
+                $('.categoriesSub').css('color', 'black')
+            })
+
+            $('.categoriesSub').click(function(){
+                $('.sideMenu').toggleClass('show')
+            })
+
+            $('.categoriesSub li a').css('color', 'black')
+
+            $('.addTocart').mousedown(function(){
+                $(this).css('background', 'white')
+                $(this).css('transform', 'scale(.8)')
+            })
+
+            $('.addTocart').mouseup(function(){
+                $(this).css('background', 'rgb(240, 111, 132)')
+                $(this).css('transform', 'scale(1)')
+            })
+
+            // OVERLAY TOGGLE FUNCTION
+
+            $('.shirtImg').click(function(e){
+                var price = $(this).parent().find('.priceTag').text()
+                var image = $(this).parent().find('.shirtImg img').attr('src')
+                var name = $(this).parent().find('.productName').text()
+                var storeName = $(this).parent().find('.storeName').text()
+                var discription = $(this).parent().find('.discription').text()
+                
+                $('.overlayImage').attr('src', image)
+                $('.overlayProdName').text(name)
+                $('.overlayPriceTag').text(price)
+                $('.overlayStoreName').text(storeName)
+                $('.discription').text(discription)
+
+
+                $('.overLayBg').addClass('overlayShow')
+            })
+
+            $('.closeOverlay').click(function(){
+                $('.overLayBg').removeClass('overlayShow')
+            })
+
+            // ADD TO CART FROM CATEGORIES
+
+            $('.addTocart').click(function(){
+                $(this).text('Added')
+                var image = $(this).parent().parent().find('.shirtImg img').attr('src')
+                var price = $(this).parent().parent().find('.priceTag').text()
+                var name = $(this).parent().parent().find('.productName').text()
+               
+                $('.cartRowCont').append(`<div class="cartRow">
+                <img src="${image}" class="cartImg">
+                <div class="cartDetails">
+                    <p class="cartProdName">${name}</p>
+                    <h4 class="cartPrice">${price}</h4>
+                </div>
+                 <p><span class="material-symbols-sharp">
+delete
+</span></p>
+                <div class="qtyCont">
+                    <p class="qtyUp">+</p>
+                    <input type="number" value="1"  class="qty">
+                    <p class="qtyDown">-</p>
+                </div>
+               
+             </div>`);
+
+             var counter = 1;
+            $('.qtyUp').click(function(){
+                counter++
+                $(this).next().val(counter)
+            })
+
+            $('.qtyDown').click(function(){
+                counter--
+                $(this).prev().val(counter)
+            })
+
+            $('.cartCont').addClass('showCart')
+            })
+
+            
+            // SHOPPING CART FUNTIONALITY
+
+            $('.cart').click(function(){
+                $('.cartCont').addClass('showCart')
+            })
+
+            $('.closeCart').click(function(){
+                $('.cartCont').removeClass('showCart')
+            })
+
+            var counter = 1;
+            $('.qtyUp').click(function(){
+                counter++
+                $(this).next().val(counter)
+            })
+
+            $('.qtyDown').click(function(){
+                counter--
+                $(this).prev().val(counter)
+            })
+            $('.cartRowCont').empty()
+            $('.clearCart').click(function(){
+                $('.cartRowCont').empty()
+                $('.addTocart').text('Add+')
+            })
+         })
+    </script>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="navBtn">
+            <div class="btn1"></div>
+            <div class="btn2"></div>
+            <div class="btn3"></div>
+        </div>
+        <div class="logo"><img src="{% static 'products/img/logo.jpg'%}" alt="logo"></div>
+        <div class="cart"><span class="material-symbols-outlined">
+shopping_cart
+</span></div>
+    </header>
+
+    
+   <div class="searchCont">
+    <form  action="{% url 'hsearch' %}" method="get">
+    <input type="search" name="q" placeholder="search products..." class="searchbar">
+    </form>
+    <div class="filterCont">
+        <div class="filterbox"> <span class="material-symbols-outlined">
+tune
+</span></div>
+        <p class="filtertext">filter</p>
+    </div>
+   </div>
+
+   <div class="homeWallpaperCont">
+       <h1>Online Shopping That Suites You...</h1>
+    <img src="{% static 'products/img/bg3.png'%}" alt="Wallpaper" class="homeWallpaper">
+   </div>
+
+   <div class="sideMenu">
+       <div class="menuLogoCont">
+           <div class="menuLogo"><img src="{% static 'products/img/logo.jpg'%}" alt="LOGO"></div>
+           <button class="close"><span class="material-symbols-sharp">
+close
+</span></button>
+       </div>
+       <ul class="mainList">
+           <li class="menuCategories"> Categories
+               <ul class="categoriesSub">
+                   <li><a href="#men">Men's Clothes</a></li>
+                   <li><a href="#women">Women's Clothes</a></li>
+                   <li><a href="#supermarket">Supermarket</a></li>
+                   <li><a href="#shoe">Shoes</a></li>
+                   <li><a href="#bag">Bags</a></li>
+                   <li><a href="#food">Food</a></li>
+                   <li><a href="#watch">Watches</a></li>
+                   <li><a href="#eletronic">Electronics</a></li>
+                   <li><a href="#phone">Phones and Accessories</a></li>
+               </ul>
+           </li>
+           
+           {% if user.is_authenticated %}
+            <li><a href="{% url 'cdash'%}">Dashboard</a></li>
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+           {% else %}
+           <li><a href="{% url 'login'%}">Log In</a></li>
+           <li><a href="{% url 'vreg'%}">Sign Up</a></li>
+           {% endif %}
+           <li>Contact Us</li>
+       </ul>
+   </div>
+
+   <div class="promoCont">
+        <h3>Promo</h3> 
+        <div class="promoDisplay"></div>
+   </div>
+
+   
+
+   <div id="categories">
+       <div class="categoriesHeader">
+           <h3>Categories</h3>
+           <button class="viewAll">View All</button>
+       </div>
+
+       <div class="categoriesBody">
+    <a href="#men">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/shirtCat2.png'%}" alt="">
+            <p class="categoriesIconText">Men's</p>
+       </div>
+    </a>
+
+        
+
+    <a href="#women">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/womenCat.png'%}" style="width: 80%; margin-left: 6px;">
+            <p class="categoriesIconText">women's</p>
+       </div>
+    </a>
+
+    <a href="#supermarket">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/supermarketCat.jpg'%}" alt="">
+            <p class="categoriesIconText">Supermarket</p>
+       </div>
+   </a>
+
+    <a href="#shoe">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/shoeCat.png'%}" style="height: 70%; margin-top: 30%;" alt="">
+            <p class="categoriesIconText">Shoes</p>
+       </div>
+   </a>
+
+   <a href="#bag">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/bagCat.png'%}" alt="">
+            <p class="categoriesIconText">Bags</p>
+        </div>
+   </a>
+
+   <a href="#watch">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/watchCat.png'%}" alt="" style="height: 60%; margin-top: 40%;">
+            <p class="categoriesIconText">Watches</p>
+        </div>
+   </a>
+
+   <a href="#food">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/foodCat.png'%}" alt="">
+            <p class="categoriesIconText">Foods</p>
+        </div>
+   </a>
+
+   <a href="#phone">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/phoneCat.png'%}" style="width: 60%; margin-left: 12px;">
+            <p class="categoriesIconText">Phones and acc..</p>
+        </div>
+   </a>
+
+   <a href="#electronic">
+        <div class="categoriesBox">
+            <img class="categoriesIcon" src="{% static 'products/img/electCat.png'%}" alt="">
+            <p class="categoriesIconText">Electronics</p>
+        </div>
+   </a>
+          
+    </div>
+
+
+     <!-- SHOPPING CART -->
+
+     <div class="cartCont">
+         <div class="cartHeader">
+             <p class="closeCart"><span class="material-symbols-sharp">
+close
+</span></p>
+             <h2>Cart</h2>
+             <p class="clearCart">Clear</p>
+         </div>
+
+         {% for cart in carts %}
+         <div class="cartRow">
+            <img src="{{cart.product.image.url}}" class="cartImg">
+            <div class="cartDetails">
+                <p class="cartProdName">{{cart.product.name}}</p>
+                <h4 class="cartPrice">${{cart.product.price}}</h4>
+            </div>
+             <p><span class="material-symbols-sharp">
+delete
+</span></p>
+            <div class="qtyCont">
+                <p class="qtyUp">+</p>
+                <input type="number" value="{{cart.quantity}}"  class="qty">
+                <p class="qtyDown">-</p>
+            </div>
+           
+         </div>
+         {% endfor %}
+
+         <!-- cart row -->
+       
+         <div class="cartRowCont">
+            <div class="cartRow">
+                <img src="" class="cartImg">
+                <div class="cartDetails">
+                    <p class="cartProdName">{{cart.product}}</p>
+                    <h4 class="cartPrice">$300</h4>
+                </div>
+                
+                <div class="qtyCont">
+                    <p class="qtyUp">+</p>
+                    <input type="number" value="{{cart.quantit}}"  class="qty">
+                    <p class="qtyDown">-</p>
+                </div>
+             </div>
+         </div>
+         
+       
+        <!-- cart row ends-->
+
+         <div class="totalCont">
+            <p class="totalWrap">Total: <sup>&#8358</sup><span class="total">{{total_cost}}</span></p>
+            <a  href="{% url 'checkout'%}"><button class="checkOut">Check Out</button></a>
+         </div>
+      </div>
+     
+
+     <!-- BOTTOM NOTIFICATION BAR -->
+
+     <div class="menuBar">
+         <div class="menuItems"><span class="material-symbols-outlined">
+notifications
+</span></div>
+         <div class="menuItems"><span class="material-symbols-outlined">
+redeem
+</span></div>
+         <div class="menuItems" class="active"><span class="material-symbols-sharp">
+home
+</span></div>
+         <div class="menuItems">
+             <span class="material-symbols-outlined">
+group_add
+</span><br>
+             </div>
+         <div class="menuItems"><span class="material-symbols-outlined">
+person
+</span></div>
+     </div>
+
+
+     <!-- PRODUCT POP UP BOX -->
+     <div class="overLayBg">
+         
+         <div class="overlayBox">
+            <button class="closeOverlay">X</button>
+            <img src="" class="overlayImage" alt="">
+            <div class="namePrice">
+                <h4 class="overlayProdName">Product</h4>
+                <p class="overlayPriceTag">450</p>
+            </div>
+            <div class="overlayDetails">
+                <p class="overlayStoreName">Store name</p>
+            <p class="discriptionHeader">Discription</p>
+            <article class="discription"> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Atque ad repellat laborum ratione in omnis provident porro! Culpa eum 
+                dolorum tenetur nesciunt rem, 
+                voluptatibus ullam sunt. Deleniti expedita officiis doloremque! 
+            </article>
+            </div>
+         </div>
+     </div>
+
+
+     <!-- VARIOUS PRODUCTS CATEGORIES -->
+     
+  
+
+     <div  class="shirts">
+        <div class="shirtsHeader">
+            <h3 id="men">Men's Clothes</h3>
+        </div>
+     
+ 
+        {% for product in products %}
+        {% if product.category == "men" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div><a/>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          
+           
+
+
+
+    <div id="shirts" >
+        <div class="shirtsHeader">
+            <h3 id="women">Women's Clothes</h3>
+        </div>
+
+        {% for product in products %}
+    {% if product.category == "women" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div><a/>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3 id="supermarket">Supermarket</h3>
+        </div>
+        {% for product in products %}
+        {% if product.category == "supermarket" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div></a>
+                </div>
+            </div>
+{% endif %}
+{% endfor %}
+
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3 id="shoe">Shoes</h3>
+        </div>
+        {% for product in products %}
+        {% if product.category == "shoe" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div></a>
+                </div>
+            </div>
+{% endif %}
+{% endfor %}
+
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3  id="bag">Bags</h3>
+        </div>
+        {% for product in products %}
+        {% if product.category == "bag" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div></a>
+                </div>
+            </div>
+
+    {% endif %}
+    {% endfor %}
+
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3  id="watch">Watches</h3>
+        </div>
+        {% for product in products %}
+        {% if product.category == "watch" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div><a/>
+                </div>
+            </div>
+ {% endif %}
+ {% endfor %}
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3  id="food">Foods</h3>
+        </div>
+        {% for product in products %}
+        {% if product.category == "food" %} 
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"> <div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div></a>
+                </div>
+            </div>
+
+        {% endif %}
+        {% endfor %}
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3  id="electronic">Electronics</h3>
+        </div>
+       
+        {% for product in products %}
+        {% if product.category == "eletronic" %} 
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"> <div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div></a>
+                </div>
+            </div>
+
+        {% endif %}
+        {% endfor %}
+
+
+    <div id="shirts">
+        <div class="shirtsHeader">
+            <h3 id="phone">Phones and Accessories</h3>
+        </div>
+        {% for product in products %}
+        {% if product.category == "phone" %}
+        <div class="shirtsBody">
+            
+            <div class="shirtsProduct">
+                <p class="priceTag"><sup>&#8358</sup>{{product.price}}</p>
+                <div class="shirtImg"><img src="{{product.image.url}}" alt=""></div>
+                <div class="shirtProductDetailsBox">
+                    <div class="shirtProductDetails">
+                        <p class="productName">{{product.name}}</p>
+                        <i class="starRating">****</i>
+                        <p class="storeName">{{product.store_name}}</p>
+                        <article class="discription" style="display: none;"> 
+                            {{product.description}}
+                        </article>
+                    </div>
+
+                    <a href="{% url 'cart_add' product.id %}"><div class="addTocart"><span class="material-symbols-sharp">
+add_shopping_cart
+</span></div></a>
+                </div>
+            </div>
+    {% endif %}
+    {% endfor %}
+ 
+           
+    <footer>
+        <div class="footerCont">
+          <div class="footerColumn">
+            <p>Contact Us</p>
+            <p style="padding-bottom: 4px; " >
+              <a href="https://www.facebook.com/makinde.akinola.96" style="color: white;"> 
+                <i  style="color:navy" class="fa-brands fa-square-facebook"></i> GeeZon Commerce</a>
+              </p>
+            <p style="padding-bottom: 4px; " >
+              <a href="https://wa.me/message/ZEIJYSHECJHWG1" style="color: white;"> 
+                <i class="fa-brands fa-whatsapp" style="color:green" ></i> 08000000000</a>
+              </p>
+            <p style="padding-bottom: 4px; " >
+              <a href="www.gmail.com" style="color: white;"> <i style="color:yellow; " class="fa-regular fa-envelope"></i> Companyemail@gmail.com</a>
+            </p>
+          </div>
+          <div class="footerColumn">
+            <p>About Us</p>
+            <p>GeeZon Commerce</p>
+            <p>Since 2008</p>
+            <p>RC: 38294537</p>
+          </div>
+          <div class="footerColumn">
+            <p>Address</p>
+            <p>3, Emily Akinola Street, Akoka, Yaba, Lagos.</p>
+          </div>
+          <div class="footerColumn">
+            <p>Terms and Conditions</p>
+          </div>
+          <div class="footerColumn">
+            <p>Privacy Policy</p>
+          </div>
+          <div class="footerColumn">
+            <p>Report a product</p>
+          </div>
+        </div>
+  
+        <p id="trademark">Copyright<span style="color: black;"> © </span> Greezon <span id="year"></span> | All rights reserved.</p>
+        <p class="trademark"><b style="color: black;">Web design by:</b> <br> <i>Charleton Technologies</i> <span  style="color: white;"><br> <i style="color: rgba(0,0,0,0.8);">+2349021619494</i></p>
+      </footer>
+     
+    <script src="{% static 'products/app.js'%}"></script>
+</body>
+</html>

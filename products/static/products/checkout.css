@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.edit-product-form-overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 111, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    display: flex;
+  }
+  
+  .edit-product-form-cont{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    box-shadow: var(--filter-shadow);
+    background-color: white;
+    padding:10px 8px;
+    border-radius: 10px;
+
+  }
+  
+  .closeEditProductform{
+    float: right;
+    margin-right: 1rem;
+    background: white;
+    clear: both;
+    border: none;
+  }
+
+  .edit-product-form-cont img{
+    margin: auto;
+    display: block;
+    width: 14rem;
+    height: 12rem;
+  }
+  
+  .edit-product-form-cont h2{
+    text-align: center;
+    color:rgb(235, 85, 85);
+    font-size: 2em;
+  }
+
+  .flexDisplay{
+    color: green;
+    margin-bottom: 3rem;
+  }
+
+  form{
+    margin-top: 1.5rem;
+  }
+  
+  .edit-product-form-cont input, select, textarea{
+    margin: .5rem auto;
+    display: block;
+    width: 80%;
+    padding: 5px;
+  }
+
+  textarea{
+    height: 6rem;
+    overflow: auto;
+  }
+  
+  .edit-product-form-cont form input, select{
+    margin-top: .2em;
+  }
+  
+  .edit-product-form-cont form div{
+    display: flex;
+    width: 80%;
+    margin: .5rem auto;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .edit-product-form-cont form .flexDisplay input:nth-child(2){
+    margin-left: 7px;
+  }
+  
+  .address{
+    font-size: 1.1em; 
+    color:rgb(235, 85, 85);
+    margin-left: 10%;
+    font-weight: bold;
+  }
+
+  .edit-product-form-cont form button{
+    margin:2rem auto auto auto;
+    display: block;
+    border: none;
+    color: rgb(226, 76, 76);
+    background:rgb(250, 181, 181);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: .9em;
+    transition: ease-out .4s;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+  }
+
+  .edit-product-form-cont form button:hover{
+    transform: translatey(-8px);
+    transition: ease-in-out .4s;
+  }
+
+  @media screen and (min-width: 600px){
+    .edit-product-form-cont{
+      width: 40%;
+    }
+
+    .edit-product-form-cont img{
+      width: 16em;
+      height: 13em;
+    }
+  }
+  

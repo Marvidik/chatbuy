@@ -1,0 +1,1226 @@
+*{
+    padding: 0;
+    text-decoration: none;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    height: 5rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 8px;
+}
+
+.btn1{
+    width: 1.6rem;
+    height: 2px;
+    margin: 4px;
+    background-color: black;
+}
+
+.btn2{
+    width:1.2rem;
+    height: 2px;
+    margin: 4px;
+    background-color: black;
+}
+
+.btn3{
+    width: 0.7rem;
+    height: 2px;
+    margin: 4px;
+    background-color: black;
+}
+
+.logo img{
+    width: 7rem;
+    height: 2.4rem;
+    border-radius: 30px;
+}
+
+.menuLogo img{
+    width: 6.2rem;
+    height: 2.2rem;
+    border-radius: 30px;
+}
+
+.searchCont{
+    width: 100%;
+    
+}
+
+.searchbar{
+    margin-left: 8px;
+    background: #ddd;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    float: left;
+}
+
+.searchbar::placeholder{
+    font-style: italic;
+}
+
+.filterCont{
+    width: 1.6rem;
+    height: 1.5rem;
+    float: right;
+    margin-right: 8px;
+    border-radius: 7px;
+
+}
+
+.filtertext{
+    margin-top: -4px;
+    margin-right: 10px;
+    font-size: 0.8em;
+}
+
+.homeWallpaperCont{
+    width: 90%;
+    margin: auto;
+    display: block;
+    margin-top: 5rem;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.homeWallpaperCont h1{
+    width: 80%;
+   
+    margin-bottom: 2rem;
+    color:  rgb(250, 152, 168);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.homeWallpaper{
+    width: 100%;
+    margin: auto;
+}
+.menuLogoCont{
+display: flex;
+justify-content: space-between;
+align-content: center;
+align-items: center;
+width: 100%;
+padding: 5px;
+padding-left: 15px;
+}
+
+.sideMenu{
+    left: -110%;
+    transition: all .4s;
+    cursor: pointer;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 4;
+    font-size: 1.1em;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.show{
+    left: 0%;
+}
+
+.categoriesSub{
+    position: relative;
+}
+
+.mainList li{
+    margin: 1.2rem;
+    transition: all .3s;
+}
+
+.mainList li a{
+    color: black;
+}
+
+.promoCont{
+     
+     margin: auto;
+     margin-top: 4rem;
+}
+
+
+.promoDisplay{
+    width: 100%;
+    height: 80%;
+    border:1px solid black;
+    
+    border-radius: 6px;
+}
+
+#categories{
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    width: 100%;
+    height: auto;
+    clear: both;
+}
+
+#categories a{
+    text-decoration: none;
+    color: black;
+}
+
+.categoriesHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+}
+
+.viewAll{
+    background: rgb(235, 85, 85);
+    padding: 5px 8px;
+    border: none;
+    color: white;
+    font-size: 0.8rem;
+    border-radius:5px;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.categoriesBody{
+    margin-top: 1.5rem;
+    height: 13rem;
+}
+.categoriesBox{ 
+    float: left;
+    background: white;
+    margin: 10px 2%;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+}
+
+.categoriesIcon{
+    margin: auto;
+    margin-right: 5px;
+}
+
+
+
+.categoriesIconText{
+    text-align: center;
+}
+
+.viewAll{
+    position: relative;
+}
+
+
+
+.product{
+    float: left;
+    width: 10rem;
+    height: 14rem;
+    padding: 6px;
+    margin-left: .6rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.priceTag{
+    text-align: right;
+    padding: 3px;
+    color: green;
+}
+
+.productImg{
+    margin: auto;
+    margin-top: .5rem;
+    margin-bottom: .3rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 97%;
+    height: 7rem;
+}
+
+.productDetailsBox{
+    width: 97%;
+    margin: auto;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 2rem;
+}
+
+.menuBar{
+    width: 100%;
+    z-index: 2;
+    background: white;
+    height: 4rem;
+    position: fixed;
+    bottom: 0;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 15px 10px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+}
+
+.menuItems{
+    width: 3rem;
+    transition: all .8s;
+    height: 3rem;
+    border-radius: 50%;
+    
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 26px 0px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color: rgb(235, 85, 85);
+    background: white;
+}
+
+.menuHover{
+    transform: scale(1.3); 
+    transition: all .5s;
+}
+
+#men{
+    margin-top: 3rem;
+}
+
+.shirts{
+    margin: 7px;
+    margin-top: 3rem;
+    height: auto;
+    margin-bottom: 12rem;
+}
+
+.shirtsHeader{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.shirts h3{
+    margin-left: 0rem;
+}
+
+.shirtsBody{
+    width: 100%;
+    margin: auto;
+    margin-top: 1.5rem;
+    height: 13rem;
+}
+
+.shirtsProduct{
+    float: left;
+    padding: 6px;
+    margin-left: .2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 31px 0px;
+    transition: ease-out .2s;
+}
+
+.shirtsProduct:hover{
+    transform: scale(1.03);
+    transition: all .2s;
+}
+
+.shirtImg{
+    margin: auto;
+    margin-top: .2rem;
+    margin-bottom: .3rem;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    width: 98%;
+    height: 6rem;
+    background: #ddd;
+}
+.shirtImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.shirtProductDetailsBox{
+    width: 99%;
+    margin: auto;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 1.2rem;
+    font-size: 0.8em;
+}
+
+.shirtProductDetails p:nth-child(1){
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.addTocart{
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0px;
+    background: rgb(240, 111, 132);
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+    transition: all .3s;
+}
+
+/* OVERLAY INTERFACE */
+
+.overLayBg{
+    z-index: -10;
+    opacity: 0;
+    width: 100vw;
+    height: 100%;
+    background: rgba(100, 100, 111, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: ease-in-out .6s;
+}
+
+.overlayShow{
+    z-index: 10; 
+    opacity: 1;
+}
+
+.closeOverlay{
+    position: absolute;
+}
+
+.overlayBox{
+    margin: auto;
+    border-radius: 15px;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.9) 0px 7px 29px 0px;
+}
+
+.overlayImage{
+    margin-left: 12.5%;
+    margin-top: 3rem;
+    width: 75%;
+    border-radius: 10px;
+}
+
+.namePrice{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 1rem;
+    width: 80%;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.overlayDetails{
+    margin: auto;
+    margin-top: 1rem;
+    width: 80%;
+}
+
+.overlayProdName{
+    width: 80%;
+   
+}
+
+.overlayStoreName{
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+}
+
+.discriptionHeader{
+    margin-bottom: .5em;
+    font-weight: bold;
+    color: rgb(235, 85, 85);
+}
+
+.discription{
+    color: rgba(100, 100, 111, 0.8);
+    font-style: italic;
+}
+
+/* SHOPPING CART */
+
+.cartCont{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    transition: ease-in .6s;
+    overflow: auto;
+    
+}
+
+.showCart{
+    z-index: 10;
+    opacity: 1;
+}
+
+.cartHeader{
+    width: 90%;
+    margin: 1.3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.cartRow{
+    width: 90%;
+    padding-right: 7px;
+    height: 6.7rem;
+    margin:0.5em auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+   z-index: 9;
+}
+
+.cartImg{
+    width: 7rem;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.cartPrice{
+    color: rgb(235, 85, 85);
+    font-size: 1.5em;
+}
+
+.qtyUp{
+    border-radius: 50%;
+    background: rgba(189, 241, 211, 0.8);
+    font-weight: bolder;
+    font-size: 1.4em;
+    color: rgb(3, 177, 3);
+    padding: 4px;
+    padding-top: 4px;
+    width: 1.3rem;
+    height: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.qty{
+    width: 1.5em;
+    border: none;
+    margin: 4px;
+    margin-left: 5px;
+}
+
+
+.qtyDown{
+    border-radius: 50%;
+    background-color: rgb(245, 222, 225);
+    color: rgb(240, 130, 144);
+    font-weight: bolder;
+    font-size: 1.8em;
+    padding: 4px;
+    padding-bottom: 9px;
+    width: 1.3rem;
+    height: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.totalCont{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0rem;
+    background: white;
+    z-index: 10;
+    height: 6rem;
+}
+
+.totalCont sup{
+    color: green;
+    font-size: 1.em;
+}
+
+.total{
+    color: green;
+    font-size: 1.8em;
+}
+
+.checkOut{
+    background: rgb(240, 130, 144);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.1em;
+}
+
+
+/* FOOTER SECTION */
+
+footer{
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 15rem;
+      z-index: 3;
+      font-family: 'Montserrat', sans-serif;
+      background: rgb(240, 111, 132);
+      color: white;
+     
+    }
+
+    .footerCont{
+      width: 85%;
+      height: 80% ;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .footerColumn{
+      font-size: 0.8em;
+      width:100%;
+      margin-top: 1.8rem;
+      cursor: pointer;
+      list-style: disc;
+    }
+
+    .footerColumn img{
+     width: 1.4rem;
+     height: 1rem;
+     
+    }
+
+
+    .footerColumn p:nth-child(1){
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: .8rem;
+      color: black; 
+    }
+
+    #trademark{
+      font-size: .9em;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      color: white;
+      width: 85%;
+      margin: 4.3rem auto 1.3rem;
+     
+    }
+
+    .trademark{
+      font-size: .8rem;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      color: white;
+      padding-bottom: 5rem;
+    }
+
+
+    /* SIGN UP PAGE STYLING */
+
+    
+    .signUpCont{
+       
+        background: white;
+        padding: 8px ;
+        padding-bottom: 25px;
+        height: auto;
+        width: 90%;
+        margin:3.5rem auto;
+        border-radius: 15px;
+        transition: .5s all;
+        box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+    }
+
+    .signUpCont h1{
+        color: rgb(235, 85, 85);
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .signUpCont img{
+        display: block;
+        margin: auto;
+        margin-top: 3rem;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+    }
+
+    .signUpType{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        margin: auto;
+        margin-top: 1rem;
+       transform: translateX(-8px);
+        width: 70%;
+    }
+
+    .as{
+        text-align: center;
+        color: rgba(0,0,0,0.5);
+        margin-top: 1rem;
+        font-size: 1.1em;
+    }
+
+    .asCustomer{
+        padding: 5px 10px;
+        border: none;
+        height: 2rem;
+        font-size: 1.1em;
+        background: rgb(235, 85, 85);
+        color: white;
+        border-radius: 20px;
+    }
+
+    .asVendor{
+        padding: 5px 10px;
+        border: none;
+        height: 2rem;
+        font-size: 1.1em;
+        background: white;
+        color: rgb(235, 85, 85);
+        border: 1px solid rgb(235, 85, 85);
+        border-radius: 20px;
+    }
+
+    #customerSignUp{
+        width: 70%;
+        margin:  2rem auto;
+        transition: all .3s;
+        display: none;
+    }
+
+    .showCustomer{
+       display: block;
+    }
+
+    #customerSignUp label{
+        transition: all .3s;
+        position: relative;
+    }
+
+    .labelFocus{
+        top: 8px;
+        font-size: .8em;
+        left: 4px;
+        background: white;
+        color: rgb(235, 85, 85);
+        padding: 4px;
+    }
+
+    #customerSignUp input{
+        width: 100%;
+        margin: auto;
+        display: block;
+        height: 1.5rem;
+        border: none;
+        border-radius: 6px;
+        background: #ddd;
+        transition: all .3s;
+        outline: none;
+        padding: 15px;
+    }
+
+    #submit{
+        padding: 8px 10px;
+        border: none;
+        height: 2rem;
+        font-size: 1em;
+        background: rgb(235, 85, 85);
+        color: white;
+        border: none ;
+        border-radius: 20px;
+        margin: auto;
+        display: block;
+    }
+
+
+
+
+    #vendorSignUp{
+        width: 70%;
+        margin:  2rem auto;
+        transition: all .3s;
+        display: none;
+    }
+
+    .showCustomer{
+       display: block;
+    }
+
+    #vendorSignUp label{
+        transition: all .3s;
+        position: relative;
+    }
+
+    .labelFocus{
+        top: 8px;
+        font-size: .8em;
+        left: 4px;
+        background: white;
+        color: rgb(235, 85, 85);
+        padding: 4px;
+    }
+
+    #vendorSignUp input{
+        width: 100%;
+        margin: auto;
+        display: block;
+        height: 1.5rem;
+        border: none;
+        border-radius: 6px;
+        background: #ddd;
+        transition: all .5s;
+        outline: none;
+        padding: 15px;
+    }
+
+    select {
+        width: 100%;
+        margin: auto;
+        display: block;
+        height: 2.1rem;
+        border: none;
+        border-radius: 6px;
+        background: #ddd;
+        transition: all .3s;
+        outline: none;
+    
+    }
+
+    option {
+        border-radius: 6px;
+        background: white;
+        width: 50%;
+    }
+
+
+    /* SIGN UP PAGE STYLING ENDS*/
+
+
+
+    /* LOGIN STYLE STARTS HERE  */
+
+    .loginCont{
+        width: 100%;
+        height: auto;
+        background: white;
+        padding: 7px;
+    }
+
+    .sideA h1{
+        text-align: left;
+        color: rgb(235, 85, 85);
+        padding-left: 2.4rem;
+        padding-top: 8px;
+        font-size: 2.6em;
+    }
+
+    .sideA img{
+        width: 70%;
+        margin: 1rem auto;
+        height: 15rem;
+        display: block;
+    }
+
+    .sideB{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sideB h1{
+        margin-top: 2rem;
+        font-size: 2.5em;
+    }
+
+    .signUpHere{
+        text-align: right;
+    }
+
+    .sideB a:nth-child(1){
+        text-decoration: underline;
+        color: rgb(235, 85, 85);
+        font-weight: bold;
+    }
+    .sideB p:nth-child(3){
+        color: rgba(100, 100, 111, 0.8);
+        padding-left: 4px;
+        margin-bottom: 1rem;
+    }
+
+    .sideB input{
+        border: 1px solid black;
+        /* border-radius: 15px; */
+        padding: 8px;
+        padding-left: 18px;
+        width: 100%;
+        margin-top: .8rem;
+    }
+
+    .loginBtnCont{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .loginBtnCont button{
+        background: dodgerblue;
+        color: white;
+        padding: 6px 30px;
+        border-radius: 20px;
+        border: none;
+        font-size: 1.1em;
+    }
+
+    .loginBtnCont a{
+        padding: 10px 30px;
+        color: rgba(100, 100, 111, 0.8);
+    }
+
+
+    /* LOGIN STYLE ENDS HERE  */
+
+
+
+    /* design for mobile screen */
+    @media screen and (max-width: 600px){
+        .header{
+            width: 100%;
+        }
+
+        .promoCont {
+            height: 10rem;
+            width: 85%;
+        }
+
+        .homeWallpaper{
+            height: 15.2rem;
+        }
+
+        .sideMenu{
+            width: 75vw;
+        }
+
+        
+        .categoriesBody{
+            width: 85%;
+            margin-left: 12%;
+        }
+
+        .shirtsProduct{
+            float: left;
+            width: 32%;
+            margin: 4px 2px;
+            height: 12rem;
+        }
+
+        .overlayBox{
+            margin-top: 5vh;
+            width: 89vw;
+            height: 90vh;
+        }
+
+        .closeOverlay{
+            left: 85vw;
+            top: 8vh;
+        }
+
+        .overlayImage{
+            height: 12rem;
+        }
+
+        .categoriesBox{ 
+            float: left;
+            width: 25%;
+            height: 5rem;
+        }
+
+        .categoriesIcon{
+            height: 5rem;
+            width: 100%;
+        }
+
+        .shirts{
+            width: 100%;
+        }
+
+        .shirtImg{
+            height: 6rem;
+        }
+
+        .shirtsHeader{
+            width: 85%;
+            margin-top: 3rem;
+        }
+
+        .searchCont{
+            transform: translateX(10px);
+        }
+
+        .searchbar{
+            width: 80%;
+            transform: translateX(5px);
+        }
+
+        footer{
+            margin-left: -1.8%;
+        }
+}
+
+    /* design for desktop */
+    @media screen and (min-width: 600px){
+        .header{
+           width: 100%;
+        }
+        
+        .cartCont{
+            width: 50%;
+            margin-left: 50%;
+        }
+
+        .totalCont{
+            width: 100%;
+        }
+
+        .qty{
+            width: 1.8em;
+        }
+
+        .totalCont{
+            width: 45%;
+        }
+
+        .promoCont{
+            height: 24rem;
+            width: 80%;
+
+        }
+
+        .homeWallpaperCont{
+            width: 80%;
+        }
+
+        .homeWallpaperCont h1{
+            margin-left: -1%;
+            font-size: 3em;
+            width: 60%;
+        }
+
+        .homeWallpaper{
+            height: 31rem;
+            width: 80%;
+            margin-left: 4%;
+            margin-top: -1rem;
+        }
+
+        .searchbar{
+            margin-left: 15px;
+            width: 84%;
+        }
+
+        .categoriesBox{ 
+            float: left;
+            width: 14%;
+            height: 12rem;
+        }
+
+        .categoriesIcon{
+            height: 10rem;
+            width: 80%;
+        }
+
+        .shirts{
+            width: 93%;
+            margin: auto;
+            margin-bottom: 2.5rem;
+        }
+
+        .shirts h3{
+            font-size: 1.5em;
+        }
+
+        
+        .shirtsHeader{
+            width: 97%;
+            margin-top: 8rem;
+        }
+
+        .shirtsProduct{
+            float: left;
+            width: 20%;
+            margin: 8px 8px;
+            height: 16rem;
+        }
+
+        .shirtImg{
+            height: 10rem;
+        }
+
+        .overlayBox{
+            margin-top: 5vh;
+            width: 65vw;
+            height: 90vh;
+            overflow-y: hidden;
+        }
+
+        .closeOverlay{
+            left: 89vw;
+            top: 5vh;
+        }
+
+        .overlayImage{
+            height: 18rem;
+            margin-left: 25%;
+            width: 47%;
+        }
+
+        .categoriesBody{
+            width: 94%;
+            margin-left: 7%;
+        }
+
+
+        .sideMenu{
+            width: 29vw;
+        }
+
+        .mainList{
+            margin-left: 1.5rem;
+            margin-top: 1.8rem;
+        }
+
+        .menuLogoCont{
+            margin-top: 1rem;
+            width: 90%;
+        }
+
+        .searchCont{
+            width: 85%;
+            margin: auto;
+            margin-left: 8.5%;
+            display: block;
+        }
+
+        .filterCont{
+            margin-right: 7em;
+        }
+
+        footer{
+            clear: both;
+            margin-left: -5%;
+            width: 110%;
+        }
+        
+
+        .footerColumn{
+            float: left;
+            width: 25%;
+        }
+
+        #trademark{
+            margin: auto;
+            margin-top: 12rem;
+            width: 100%; clear: both;
+        }
+
+        /* SIGN UP PAGE STYLING FOR DESKTOP */
+
+        .signUpCont{
+            width: 40%;
+            margin-top: 7rem;
+        }
+
+         /* SIGN UP PAGE STYLING FOR DESKTOP ENDS*/
+
+        
+         /* LOGIN PAGE STYLING FOR DESKTOP */
+
+        .sideA{
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+
+        .sideA img{
+            height: 100%;
+            width: 90%;
+        }
+
+        .sideB{
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+
+        .sideB h1{
+            margin-top: 7rem;
+        }
+
+        .sideB input{
+            width: 70%;
+           
+        }
+
+        .loginBtnCont{
+            width: 76%;
+            margin-top: 2rem;
+          transform: translateX(-4.6rem);
+        }
+
+        /* LOGIN PAGE STYLING FOR DESKTOP ENDS*/
+
+    }
+    
+    /* design for tablet */
+    @media screen and (max-width: 760px){
+        .filterCont{
+            margin-right: 2em;
+        }
+        
+    }

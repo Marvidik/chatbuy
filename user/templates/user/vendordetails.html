@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'user/vendorAdmin.css'%}">
+    <script src="{% static 'user/jquery-3.6.3.js'%}"></script>
+    
+    <title>Dashboard - Greezon</title>
+</head>
+<body>
+    <div >
+        <button>X</button>
+        <div class="overlay">
+            <div class="customerInfo">
+                <img src="{% static 'user/img/profile.png'%}" alt="">
+                <div>
+                    <h3>Customer:</h3>
+                    <p>{{order.user}}</p>
+                    <p>{{order.phone_number}}</p>
+                    <p>{{order.shipping_address}}</p>
+                </div>
+            </div>
+            <div class="orderDetailsCont">
+                <h2>Order details:</h2>
+                <p><b>Time & Time </b>{{order.ordered_date}}</p>
+                <p><b>Order ID: </b>#{{order.id}}</p>
+                <div class="productCont">
+                    <h3>Products</h3>
+                    <div class="productRowHeader">
+                        <b>Avater</b>
+                        
+                        <b>Product</b>
+                        <b>Qty</b>
+                        <b>Amount</b>
+                    </div>
+                    <div class="productRow">
+                        <img src="{{order.image.url}}" alt="">
+                       
+                        <p>{{order.name}}</p>
+                        <p>x{{order.quantity}}</p>
+                        <p><sup>&#8358</sup>{{order.price}}</p>
+                    </div>
+                    <div class="totalCont">
+                        <p>Total: <b class="total"><sup>&#8358</sup>{{order.price}}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

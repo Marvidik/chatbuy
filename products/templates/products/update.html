@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>CodePen - Products Dashboard UI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'products/stat/style.css'%}">
+<script src="{% static 'products/stat/jquery-3.6.3.js'%}"></script>
+<script>
+  $(document).ready(function(){
+    $('.sidebar-header button').click(function(){
+      $('.sidebar').toggleClass('show-siderBar')
+    })
+
+    $('.navBtn').click(function(){
+      $('.sidebar').toggleClass('show-siderBar')
+    })
+
+    $('.mode-switch').click(function(){
+      $('.mainList li a').toggleClass('mainList-daymode')
+      $('.sidebar').toggleClass('sidebar-daymode')
+    })
+
+
+    $(".cell-more-button").click(function(){
+      $(this).next().css('display', 'initial')
+    })
+
+    $('.optionCont').mouseleave(function(){
+      $('.optionCont').css('display', 'none')
+    })
+
+
+    // funtionality for add product
+    $('.closeProductform').click(function(){
+      $('.product-form-overlay').toggleClass('show-product-form-overlay')
+    })
+
+    $('.app-content-headerButton').click(function(){
+      $('.product-form-overlay').toggleClass('show-product-form-overlay')
+    })
+
+    $('.product-form-cont form button').click(function(){
+      $(this).text('Added!')
+    })
+    
+    
+
+    // funtionality for edit product
+    $('.closeEditProductform').click(function(){
+      $('.edit-product-form-overlay').css('display','none')
+    })
+
+    $('.editProduct').click(function(){
+      $('.edit-product-form-overlay').css('display','flex')
+    })
+
+    
+    
+    $('.menuEditBtn').click(function(){
+      $('.sidebar').toggleClass('show-siderBar')
+      $('.edit-product-form-overlay').css('display','flex')
+    })
+
+    $('.menuProdBtn').click(function(){
+      $('.sidebar').toggleClass('show-siderBar')
+    })
+    
+    $('.edit-product-form-cont form button').click(function(){
+      $(this).text('Updated!')
+    })
+
+    
+  })
+</script>
+</head>
+<body>
+
+        <!-- EDIT PRODUCT FORM -->
+
+  <br>
+  <br>
+
+      
+          <div class="product-form-cont">
+            <button class="closeProductform">X</button><br>
+            <h3>Edit Product</h3>
+            <form  method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{uform.name}}
+              <div class="fileUpload">
+                <label for="product-picture">Product Picture:
+                </label>
+                {{uform.image}}
+              </div>
+              <div class="flexDisplay">
+                {{uform.price}}
+                {{uform.stock}}
+              </div>
+              {{uform.store_name}}
+              
+              {{uform.description}}
+              <label for="select-new-category" class="categoriesSelect">Category:</label>
+              {{uform.category}}
+              <button type="submit"  name="updateproduct">Update</button>
+            </form>
+          </div>
+ 
+  
+        
+        
+  
+</div>
+<!-- partial -->
+  <script  src="{% static 'products/stat/script.js'%}"></script>
+
+</body>
+</html>

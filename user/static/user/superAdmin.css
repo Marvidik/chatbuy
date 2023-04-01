@@ -1,0 +1,455 @@
+*{
+    padding: 0;
+    text-decoration: none;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: rgb(253, 234, 237);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    width: 90%;
+    padding: 8px;
+    height: auto;
+    margin: 1rem auto 0.5rem;
+    background: ;
+    display: flex;
+    justify-content: right;
+    display: none;
+}
+
+.header img{
+    width: 5rem;
+    height: 2rem;
+}
+
+.intro{
+    width: 90%;
+    height: auto;
+    margin: 1.5rem auto;
+    /* margin-top: 0rem; */
+    padding: 20px;
+    padding-bottom: 0px;
+    background: white;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+}
+
+.intro h2{
+    margin-top: 0.5rem;
+}
+
+.intro img{
+    width: 75%;
+    height: 14rem;
+    margin-top: 0.5rem;
+    margin-left: -1rem;
+}
+
+.smallBoxCont{
+    width: 90%;
+    margin: .5rem auto;
+    margin-bottom: 2rem;
+}
+
+.smallBox{
+    height: auto;
+    padding: 10px;
+    background: white;
+    width: 46%;
+    float: left;
+    margin: .4rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+}
+
+.smallBox img{
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.3rem;
+}
+
+.smallBox h3{
+    margin-bottom: .2rem;
+}
+
+.tableCont{
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    height: auto;
+    background: white;
+    padding: 7px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    clear: both;
+    position: relative;
+    top: 1rem;
+}
+
+.tableCont h2{
+    margin-top: .5rem;
+    color: rgb(161, 90, 161);
+}
+
+table{
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+table tr:nth-child(odd){
+    background: #ddd;
+}
+
+table tr:nth-child(1){
+    background: rgb(161, 90, 161);
+    color: white;
+}
+
+table tr th{
+    padding: 5px;
+    text-align: center;
+}
+
+table tr td{
+    padding: 5px;
+    text-align: center;
+}
+
+.vendorTableCont{
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    height: auto;
+    background: white;
+    padding: 7px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    clear: both;
+    position: relative;
+    top: 1rem;
+}
+
+.vendorTableCont h2{
+    margin-top: .5rem;
+    color: rgb(32, 121, 209);
+}
+
+.vendorTableCont table tr:nth-child(1){
+    background: rgb(32, 121, 209);
+    color: white;
+}
+
+.vendorTableCont tr td:nth-child(4){
+    display: flex;
+justify-content: flex-start;}
+
+.vendorTableCont tr td:nth-child(4) button{
+    margin: 3px;
+    padding: 4px 5px;
+    border-radius: 5px;
+}
+
+.vendorTableCont tr td:nth-child(4) button:nth-child(1){
+    background: rgb(195, 250, 195);
+    color: rgb(80, 139, 80);
+    border: none;
+}
+
+.vendorTableCont tr td:nth-child(4) button:nth-child(2){
+    background: rgb(243, 203, 203);
+    color: rgb(219, 77, 77);
+    border: none;
+}
+
+.vendorTableCont tr:nth-child(odd){
+    background: rgb(215, 230, 245);
+}
+
+
+.uploadReqTableCont{
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    height: auto;
+    background: white;
+    padding: 7px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    clear: both;
+    position: relative;
+    top: 1rem;
+}
+
+.uploadReqTableCont h2{
+    margin-top: .5rem;
+    color: rgb(32, 202, 108);
+}
+
+.uploadReqTableCont table tr:nth-child(1){
+    background: rgb(32, 202, 108);
+    color: white;
+}
+
+.uploadReqTableCont tr td:nth-child(4){
+    display: flex;
+justify-content: flex-start;}
+
+.uploadReqTableCont tr td:nth-child(4) button{
+    margin: 3px;
+    padding: 4px 5px;
+    border-radius: 5px;
+}
+
+.uploadReqTableCont tr td:nth-child(4) button:nth-child(1){
+    background: rgb(195, 250, 195);
+    color: rgb(80, 139, 80);
+    border: none;
+}
+
+.uploadReqTableCont tr td:nth-child(4) button:nth-child(2){
+    background: rgb(243, 203, 203);
+    color: rgb(219, 77, 77);
+    border: none;
+}
+
+.uploadReqTableCont tr:nth-child(odd){
+    background: rgb(193, 252, 193);
+}
+
+.uploadReqTableCont tr:nth-child(odd) button{
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+}
+
+.uploadReqTableCont tr:nth-child(even) button{
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 15px 30px 0px;
+}
+
+.overlayCont{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 111, 0.6);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: none;
+}
+
+.overlay{
+    width: 82%;
+    height: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 1) 0px 7px 29px 0px;
+}
+
+.show{
+    display: flex;
+}
+
+.overlay button{
+    float: right;
+    background: transparent;
+    border: none;
+    font-size: 1.3em;
+}
+
+.overlay h2{
+    font-size: 3.1em;
+    color: rgb(54, 121, 189);
+    margin-bottom: 1rem;
+    margin-top: .6em;
+}
+
+.overlay p{
+    margin-bottom: 1rem;
+}
+
+.uploadOverlayCont{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 111, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: none;
+}
+
+.uploadOverlay{
+    width: 82%;
+    height: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 1) 0px 7px 29px 0px;
+}
+
+
+.details{
+    height: 50vh;
+    overflow: auto;
+
+}
+
+.uploadOverlay button{
+    float: right;
+    background: transparent;
+    border: none;
+    font-size: 1.3em;
+}
+
+.uploadOverlay h2{
+    font-size: 3.1em;
+    color: rgb(54, 121, 189);
+    margin-bottom: 1rem;
+    margin-top: .6em;
+}
+
+.uploadOverlay p{
+    margin-bottom: 1rem;
+}
+
+.uploadOverlay img{
+    width: 7rem;
+    height: 8rem;
+}
+
+@media screen and (max-width: 600px){
+    #desktopVendor{
+        display: none;
+    }
+
+    #desktopUpload{
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 600px){
+    .intro{
+        float: left;
+        width: 43%;
+        margin: 1rem 8rem;
+        margin-right: 1.5rem;
+    }
+
+    .intro img{
+        width: 60%;
+        height: 20rem;
+    }
+
+    .smallBoxCont{
+        width: 35%;
+        float: left;
+        /* margin: 1rem 2.1rem; */
+
+    }
+
+    .tableCont{
+        margin-top: 3rem;
+        width: 80%;
+    }
+
+    #desktopVendor table tr td{
+        text-align: center;
+    }
+
+    #desktopVendor{
+        width: 80%;
+    }
+   
+    #phoneVendor{
+        display: none;
+    }
+
+    #phoneUpload{
+        display: none;
+    }
+    #desktopUpload{
+        margin-top: 3rem; 
+        width: 80%;
+    }
+
+    #desktopUpload table td img{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    #desktopUpload table td:nth-child(4){
+        width: 20rem;
+        height: auto;
+        text-align: center;
+    }
+
+    #desktopUpload table th:nth-child(4){
+        width: 5rem;
+        height: auto;
+        text-align: center;
+
+    }
+
+    .uploadReqTableCont tr td:nth-child(7) button:nth-child(1){
+        background: rgb(195, 250, 195);
+        color: rgb(80, 139, 80);
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    .uploadReqTableCont tr th{
+        background: rgb(54, 121, 189);
+    }
+
+    .uploadReqTableCont h2{
+        color: rgb(54, 121, 189);
+    }
+
+    .uploadReqTableCont tr:nth-child(odd){
+        background: rgb(201, 225, 248);
+    }
+    
+    .uploadReqTableCont tr td:nth-child(7) button:nth-child(2){
+        background: rgb(243, 203, 203);
+        color: rgb(219, 77, 77);
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    #desktopVendor tr td:nth-child(8) button:nth-child(2){
+        background: rgb(243, 203, 203);
+        color: rgb(219, 77, 77);
+        border: none;
+        padding: 4px 5px;
+        border-radius: 4px;
+    }
+
+    #desktopVendor tr td:nth-child(8) button:nth-child(1){
+        background: rgb(195, 250, 195);
+        color: rgb(80, 139, 80);
+        border: none;
+        padding: 4px 5px;
+        border-radius: 4px;
+    }
+
+
+   
+}

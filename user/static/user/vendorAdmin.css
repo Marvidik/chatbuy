@@ -1,0 +1,429 @@
+*{
+    padding: 0;
+    text-decoration: none;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(243, 234, 234);
+    /* rgba(100, 100, 111, 0.4) */
+}
+
+.navCont{
+    width: 92%;
+    height: 4rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    margin:1rem auto;
+    padding: 8px 19px;
+    border-radius: 6px;
+}
+
+.dp{
+    width: 3rem;
+    height: 3rem;
+    background: #ddd;
+    border-radius: 50%;
+    position: relative;
+}
+
+.online{
+    border-radius: 100%;
+    background: green;
+    border: 3px solid white;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.navBtn{
+    background:transparent;
+    border: none;
+}
+
+.btn1{
+    width: 1.6rem;
+    height: 2px;
+    margin: 5px;
+    background-color: black;
+}
+
+.btn2{
+    width:1.6rem;
+    height: 2px;
+    margin: 5px;
+    background-color: black;
+}
+
+.btn3{
+    width: 1.6rem;
+    height: 2px;
+    margin: 5px;
+    background-color: black;
+}
+
+.intro{
+    width: 92%;
+    height: auto;
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 6px;
+    float: none;
+}
+
+.intro img{
+    width: 65%;
+    height: 12rem;
+    margin: auto;
+    margin-top: 2rem;
+    /* display: block; */
+}
+
+.intro h1{
+    margin: .7rem 0;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    align-self: baseline;
+    width: 100%;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+
+.bottom h2{
+    color: green;
+}
+
+.bottom h2 sup{
+    font-size: .5em;
+}
+
+.smallBoxCont{
+    display: grid;
+    grid-row-gap: .3rem;
+    grid-column-gap: .3rem;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    margin: auto;
+    margin-bottom: 0.7rem;
+    width: 94%;
+}
+
+.smallBox{
+    /* width: 45.5%; */
+    height: auto;
+    margin: .5rem;
+    margin-top: 1rem;
+    background: white;
+    float: left;
+    border-radius: 1px;
+    padding: 6px;
+}
+
+.smallBoxTop{
+    width: 60%;
+    margin: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.smallBoxTop img{
+    width: 3.5rem;
+    height: 3.3rem;
+}
+
+.notify{
+    background: green;
+    margin-top: -3px;
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    border: 3px solid rgb(170, 245, 170);
+}
+
+.smallBox h2{
+    font-size: 1.8em;
+    margin-left: 1.1rem;
+    padding-top: 0rem;
+    color: rgb(177, 92, 177);
+}
+
+.smallBox h2 sup{
+    font-size: .5em;
+}
+
+table{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+table tr {
+    text-align: center;
+}
+
+table tr:nth-child(odd){
+    background: #ddd;
+    
+}
+
+table tr td, th{
+    padding: 3px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+table tr td:nth-last-child(1){
+    background: rgb(176, 238, 176);
+    border: 1px solid #ddd;
+    color: green;
+    border-radius: 4px;
+}
+
+/* overlay container */
+
+.overlayCont{
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 94, 94, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    opacity: 0;
+}
+
+.showOverlay{
+    z-index: 3;
+    opacity: 1;
+}
+
+.overlayCont button{
+    position: relative;
+    left: 92.5%;
+    top: .6rem;
+    padding: 3px;
+}
+
+.overlay{
+    width: 95%;
+    height: 90%;
+    background: white;
+    display: block;
+    margin: 5% auto;
+    padding-top: 1rem;
+    overflow: auto;
+}
+
+.customerInfo{
+    width: 95%;
+    height: 6.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-self: center;
+    margin: auto;
+   
+}
+
+.customerInfo img{
+    width: 6.5rem;
+    border-radius: 100%;
+    background: #ddd;
+}
+
+.customerInfo div{
+    width: 65%;
+}
+
+.customerInfo h3{
+    padding-bottom: .2em;
+    color: rgb(41, 151, 41);
+}
+
+.customerInfo p{
+    padding-bottom: .2em;
+}
+
+.orderDetailsCont{
+    width: 95%;
+    margin:2rem auto;
+}
+
+.orderDetailsCont h2{
+    color: rgb(41, 151, 41);
+}
+
+.productCont{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.productCont h3{
+    color: rgb(41, 151, 41);
+}
+
+.productRow{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.productRowHeader{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.productRow img{
+    width: 2rem;
+    height: 2rem;
+    background: #ddd;
+}
+.totalCont{
+    float: right;
+    margin-top: .5rem;
+}
+
+.totalCont b{
+    color: rgb(41, 151, 41);
+    font-size: 1.4em;
+}
+
+.menu{
+    transition: all .4s;
+    cursor: pointer;
+    height: 100vh;
+    width: 70%;
+    position: fixed;
+     right: 110%;
+    top: 0;
+    background: white;
+    z-index: 4;
+    font-size: 1.1em;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.show{
+   right: 30%;
+}
+
+.menuLogoCont{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.menuLogoCont{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.menuLogo img{
+    width: 6.2rem;
+    height: 2.2rem;
+    border-radius: 30px;
+}
+
+.mainList{
+    margin-left: 1.5rem;
+    margin-top: 1.8rem;
+}
+
+
+.mainList li{
+    margin: 1rem auto;
+    color: green;
+}
+
+.mainList li a{
+    color: green;
+}
+
+
+@media screen and (min-width: 600px){
+    .btn3{
+        height: 2.2px;
+        margin: 4.7px;
+    }
+
+    .intro{
+        width: 55%;
+        float: left;
+        clear: left;
+        margin: 1rem 1rem;
+        margin-left: 3.5rem;
+    }
+
+    .intro img{
+        width: 45%;
+        height: 16rem;
+    }
+
+    table{
+        font-size: 1.1em;
+    }
+
+    .smallBoxCont{
+        float: right;
+        width: 35%;
+        clear: right;
+        margin-right: 3.5rem;
+        height: 15rem;
+    }
+
+    .smallBox h2{
+        margin-top: 4rem;
+    }
+
+}
+
+
+/* tablet design */
+
+/* @media screen and (max-width: 1024px){
+    .intro{
+        width: 53%;
+        margin-left: 2rem;
+    }
+
+    table{
+        font-size: 1em;
+    }
+
+    .intro img{
+        width: 80%;
+        height: 14rem;
+    }
+
+    .smallBoxCont{
+        float: right;
+        width: 35%;
+        clear: right;
+        margin-right: 1.3rem;
+        height: 15rem;
+    }
+
+} */

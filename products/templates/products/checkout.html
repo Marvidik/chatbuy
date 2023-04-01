@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check out - Chatbuy</title>
+    <link rel="stylesheet" href="{% static 'products/checkout.css'%}">
+</head>
+<body>
+    <div class="edit-product-form-overlay">
+        <div class="edit-product-form-cont">
+         
+          <img src="{% static 'products/img/checkout.png'%}" alt="">
+          <h2>Check Out</h2>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="flexDisplay">
+              <p style="color: black; ">Total:</p>
+              <p><sup>&#8358</sup><span >{{total_cost}}</span></p>
+            </div>
+            
+            <div class="flexDisplay">
+              <p style="color: black;">Total Amount Payable: <br>
+                <span>(Registration fee only)</span>
+              </p>
+              <p><sup>&#8358</sup><span >500</span></p>
+            </div>
+            
+            <label  class="address">Delivery Address:</label>
+
+            <textarea name="shipping_address" id="" cols="10" rows="10" placeholder="Your address here:"></textarea>
+            
+            <button type="submit">Check out</button>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

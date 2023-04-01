@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - chatbuy</title>
+    <link rel="stylesheet" href="{% static 'user/notifications.css'%}">
+</head>
+<body>
+    <div class="cont">
+        <div class="header">
+            
+            <img src="{% static 'user/img/notification.jpg'%}" alt="">
+            <h2>Notifications</h2>
+        </div>
+        {% for note in notification %}
+        <div class="notificationBody">
+            {% if note.notification == "Your order has been taken and is being processed." %}
+                <img class="icon" src="{% static 'user/img/check.jpg'%}">
+            {% elif note.notification == "Your product upload was not approved. Please contact the company surpport line." %}
+                <img class="icon" src="{% static 'user/img/x-button.jpg'%}">
+            {% elif note.notification == "You have paid 500 registration fee." %}
+                <img class="icon" src="{% static 'user/img/money.jpg'%}">
+            {% elif note.notification == "Your order has been delivered!" %}
+                <img class="icon" src="{% static 'user/img/food-delivery.jpg'%}">
+            {% else %}
+                <img class="icon" src="{% static 'user/img/check.jpg'%}">
+            {% endif %}
+            <div class="notificationMessage">
+                <p>{{note.notification}}</p>
+            </div>
+            <div class="time-date">
+                <p>{{note.time}}</p>
+                <p>{{note.date}}</p>
+            </div>
+        </div>
+        {% endfor %}  
+        {% comment %} <div class="notificationBody">
+            <img src="{% static 'user/img/transaction.jpg'%}" class="icon">
+            <div class="notificationMessage">
+                <p>You have recieved +$5000 cashback. for your last purchase</p>
+            </div>
+            <div class="time-date">
+                <p>9:38am</p>
+                <p>2 Mar</p>
+            </div>
+        </div> {% endcomment %}
+    </div>
+</body>
+</html>
